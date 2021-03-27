@@ -36,6 +36,8 @@
         }
         let currentPlayer = false; //player x is 1, player y is 2
 
+        cleanField();
+
 
         function claimCell(id){
             let button = document.getElementById(id);
@@ -63,20 +65,20 @@
 
         function getPlayerName(){
             if(currentPlayer ==1){
-                return 'x';
+                return "x";
             }else if(currentPlayer ==2){
-                return 'y';
+                return "y";
             }
             return "error"
         }
 
         function changePlayer(){
+            document.getElementById("player").innerText=getPlayerName() + " turn";
             if(currentPlayer==1){
                 currentPlayer =2;
             }else{
                 currentPlayer =1;
             }
-            document.getElementById("player").innerText=getPlayerName();
         }
 
         function disableField(){ //disable all the buttons
@@ -109,7 +111,7 @@
 
         function vertical(whichPlayer){ //player should be a boolean that indicates the player to check
             for(let i = 0; i < 3; i++){
-                if(playField[0][i] == playField[1][i] == playField[2][i] == whichPlayer){
+                if(playField[0][i] == playField[1][i] && playField[1][i] == playField[2][i] && playField[2][i] == whichPlayer){
                     console.log("verticale true");
                     return true;
                 }
@@ -119,7 +121,7 @@
         }
         function orizzontal(whichPlayer){
             for(let i = 0; i < 3; i++){
-                if(playField[i][0] == playFieldi[i][1] == playField[i][1] == whichPlayer){
+                if(playField[i][0] == playField[i][1] &&  playField[i][1] == playField[i][2] && playField[i][2] == whichPlayer){
                     console.log("orizzontale true");
                     return true;
                 }
@@ -129,14 +131,22 @@
         }
         function diagonal(whichPlayer){
             let tmp = false;
-            if(playField[0][0] == playFieldi[1][1] == playField[2][2] == whichPlayer){
+            if(playField[0][0] == playField[1][1] && playField[1][1] == playField[2][2] && playField[2][2] == whichPlayer){
                 tmp = true;
                 }
-            if(playField[2][0] == playFieldi[1][1] == playField[0][2] == whichPlayer){
+            if(playField[2][0] == playField[1][1] && playField[1][1] == playField[0][2] && playField[0][2] == whichPlayer){
                 tmp = true;
             }
             console.log("diagonale"+ tmp);
             return tmp;
+        }
+
+        function cleanField(){
+            for(let i = 0; i < 3; i++){
+                for(let j = 0; j < 3; j++){
+                    playField[i][j] = 0;
+                }
+            }
         }
     </script>
 
