@@ -11,21 +11,21 @@
 
     <!-- first row-->
     <div>
-        <button id="0,0" onclick="claimCell('0,0')" class="button" type="button"> </button>
-        <button id="0,1" onclick="claimCell('0,1')" class="button" type="button"> </button>
-        <button id="0,2" onclick="claimCell('0,2')" class="button" type="button"> </button>
+        <button id="0,0" onclick="claimCell('0,0')" class="button" type="button">  </button>
+        <button id="0,1" onclick="claimCell('0,1')" class="button" type="button">  </button>
+        <button id="0,2" onclick="claimCell('0,2')" class="button" type="button">  </button>
     </div>
     <!-- second row-->
     <div>
-        <button id="1,0" onclick="claimCell('1,0')" class="button" type="button"> </button>
-        <button id="1,1" onclick="claimCell('1,1')" class="button" type="button"> </button>
-        <button id="1,2" onclick="claimCell('1,2')" class="button" type="button"> </button>
+        <button id="1,0" onclick="claimCell('1,0')" class="button" type="button">  </button>
+        <button id="1,1" onclick="claimCell('1,1')" class="button" type="button">  </button>
+        <button id="1,2" onclick="claimCell('1,2')" class="button" type="button">  </button>
     </div>
     <!-- third row-->
     <div>
-        <button id="2,0" onclick="claimCell('2,0')" class="button" type="button"> </button>
-        <button id="2,1" onclick="claimCell('2,1')" class="button" type="button"> </button>
-        <button id="2,2" onclick="claimCell('2,2')" class="button" type="button"> </button>
+        <button id="2,0" onclick="claimCell('2,0')" class="button" type="button">  </button>
+        <button id="2,1" onclick="claimCell('2,1')" class="button" type="button">  </button>
+        <button id="2,2" onclick="claimCell('2,2')" class="button" type="button">  </button>
     </div>
 
     <p id="player"> </p>
@@ -34,7 +34,7 @@
         for(let i = 0; i < 3; i++){
             playField[i] = new Array(3);
         }
-        let currentPlayer = 1; //player X is 1, player O is 2
+        let currentPlayer = 2; //player X is 1, player O is 2
 
         cleanField();
 
@@ -50,14 +50,8 @@
             
             playField[x][y] = currentPlayer;
             
-            let win
-            if(currentPlayer){
-                win = checkXWin();
-            }else{
-                win = checkYWin();
-            }
 
-            if(win){
+            if(checkWin(currentPlayer)){
                 disableField();
                 document.getElementById("player").innerText = getPlayerName() + " won the game";
             }
@@ -96,18 +90,13 @@
             document.getElementById("2,2").disabled=true;
         }
         
-        function checkXWin(){
-            if(vertical(1) || diagonal(1) || orizzontal(1)){
+        function checkWin(whichPlayer){
+            if(vertical(whichPlayer) || diagonal(whichPlayer) || orizzontal(whichPlayer)){
                 return true;
             }
             return false;
         }
-        function checkYWin(){
-            if(vertical(2) || diagonal(2) || orizzontal(2)){
-                return true;
-            }
-            return false;
-        }
+    
 
         function vertical(whichPlayer){ //player should be a boolean that indicates the player to check
             for(let i = 0; i < 3; i++){

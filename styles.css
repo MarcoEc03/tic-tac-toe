@@ -1,7 +1,7 @@
 .button {
     border: none;
     color: greenyellow;
-    padding: 35px 35px;
+    padding: 40px 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -12,4 +12,5 @@
 .used{
     color: green;
     border-color: green;
+    padding: 30px 33px;
 }
