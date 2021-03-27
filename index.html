@@ -11,22 +11,59 @@
 
     <!-- first row-->
     <div>
-        <button id="00" class="button" type="button">0,0</button>
-        <button id="01" class="button" type="button">0,1</button>
-        <button id="02" class="button" type="button">0,2</button>
+        <button id="0,0" onclick="claimCell('0,0')" class="button" type="button">0,0</button>
+        <button id="0,1" onclick="claimCell('0,1')" class="button" type="button">0,1</button>
+        <button id="0,2" onclick="claimCell('0,2')" class="button" type="button">0,2</button>
     </div>
     <!-- second row-->
     <div>
-        <button id="10" class="button" type="button">1,0</button>
-        <button id="11" class="button" type="button">1,1</button>
-        <button id="12" class="button" type="button">1,2</button>
+        <button id="1,0" onclick="claimCell('1,0')" class="button" type="button">1,0</button>
+        <button id="1,1" onclick="claimCell('1,1')" class="button" type="button">1,1</button>
+        <button id="1,2" onclick="claimCell('1,2')" class="button" type="button">1,2</button>
     </div>
     <!-- third row-->
     <div>
-        <button id="20" class="button" type="button">2,0</button>
-        <button id="21" class="button" type="button">2,1</button>
-        <button id="22" class="button" type="button">2,2</button>
+        <button id="2,0" onclick="claimCell('2,0')" class="button" type="button">2,0</button>
+        <button id="2,1" onclick="claimCell('2,1')" class="button" type="button">2,1</button>
+        <button id="2,2" onclick="claimCell('2,2')" class="button" type="button">2,2</button>
     </div>
+
+    <p id="player">error</p>
+    <script>
+        let playField = [];
+        for(let i = 0; i < 3; i++){
+            playField[i] = new Array(3);
+        }
+        let currentPlayer = false; //player x is true, player y is false
+
+
+        function claimCell(id){
+            let button = document.getElementById(id);
+            let [x,y] =id.split(",");
+
+            changePlayer();
+            button.classList.add("used");
+            button.innerText=getPlayerName();
+            button.disabled=true;
+            
+            playField[x][y] = currentPlayer;
+            console.log(playField);
+        }
+
+        function getPlayerName(){
+            if(currentPlayer) 
+                return 'x';
+            
+            return 'y';
+        }
+
+        function changePlayer(){
+            currentPlayer = !currentPlayer;
+            document.getElementById("player").innerText=getPlayerName();
+        }
+        
+
+    </script>
 
 </body>
 </html>
