@@ -76,19 +76,19 @@
             }
         }
 
-        function disableField(){ //disable all the buttons
+        function disableField(state){ //disable all the buttons
             //first row
-            document.getElementById("0,0").disabled=true;
-            document.getElementById("0,1").disabled=true;
-            document.getElementById("0,2").disabled=true;
+            document.getElementById("0,0").disabled=state;
+            document.getElementById("0,1").disabled=state;
+            document.getElementById("0,2").disabled=state;
             //second row
-            document.getElementById("1,0").disabled=true;
-            document.getElementById("1,1").disabled=true;
-            document.getElementById("1,2").disabled=true;
+            document.getElementById("1,0").disabled=state;
+            document.getElementById("1,1").disabled=state;
+            document.getElementById("1,2").disabled=state;
             //third row
-            document.getElementById("2,0").disabled=true;
-            document.getElementById("2,1").disabled=true;
-            document.getElementById("2,2").disabled=true;
+            document.getElementById("2,0").disabled=state;
+            document.getElementById("2,1").disabled=state;
+            document.getElementById("2,2").disabled=state;
         }
         
         function checkWin(whichPlayer){
@@ -137,6 +137,12 @@
                     playField[i][j] = 0;
                 }
             }
+        }
+
+        function restart(){
+            cleanField();
+            changePlayer();
+            disableField(false);
         }
     </script>
 
