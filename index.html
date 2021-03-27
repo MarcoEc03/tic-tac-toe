@@ -28,13 +28,13 @@
         <button id="2,2" onclick="claimCell('2,2')" class="button" type="button">2,2</button>
     </div>
 
-    <p id="player">error</p>
+    <p id="player"> </p>
     <script>
         let playField = [];
         for(let i = 0; i < 3; i++){
             playField[i] = new Array(3);
         }
-        let currentPlayer = false; //player x is true, player y is false
+        let currentPlayer = false; //player x is 1, player y is 2
 
 
         function claimCell(id){
@@ -47,22 +47,97 @@
             button.disabled=true;
             
             playField[x][y] = currentPlayer;
-            console.log(playField);
+            
+            let win
+            if(currentPlayer){
+                win = checkXWin();
+            }else{
+                win = checkYWin();
+            }
+
+            if(win){
+                disableField();
+                document.getElementById("player").innerText = getPlayerName() + " won the game";
+            }
         }
 
         function getPlayerName(){
-            if(currentPlayer) 
+            if(currentPlayer ==1){
                 return 'x';
-            
-            return 'y';
+            }else if(currentPlayer ==2){
+                return 'y';
+            }
+            return "error"
         }
 
         function changePlayer(){
-            currentPlayer = !currentPlayer;
+            if(currentPlayer==1){
+                currentPlayer =2;
+            }else{
+                currentPlayer =1;
+            }
             document.getElementById("player").innerText=getPlayerName();
         }
-        
 
+        function disableField(){ //disable all the buttons
+            //first row
+            document.getElementById("0,0").disabled=true;
+            document.getElementById("0,1").disabled=true;
+            document.getElementById("0,2").disabled=true;
+            //second row
+            document.getElementById("1,0").disabled=true;
+            document.getElementById("1,1").disabled=true;
+            document.getElementById("1,2").disabled=true;
+            //third row
+            document.getElementById("2,0").disabled=true;
+            document.getElementById("2,1").disabled=true;
+            document.getElementById("2,2").disabled=true;
+        }
+        
+        function checkXWin(){
+            if(vertical(1) || diagonal(1) || orizzontal(1)){
+                return true;
+            }
+            return false;
+        }
+        function checkYWin(){
+            if(vertical(2) || diagonal(2) || orizzontal(2)){
+                return true;
+            }
+            return false;
+        }
+
+        function vertical(whichPlayer){ //player should be a boolean that indicates the player to check
+            for(let i = 0; i < 3; i++){
+                if(playField[0][i] == playField[1][i] == playField[2][i] == whichPlayer){
+                    console.log("verticale true");
+                    return true;
+                }
+            }
+            console.log("verticale false");
+            return false;
+        }
+        function orizzontal(whichPlayer){
+            for(let i = 0; i < 3; i++){
+                if(playField[i][0] == playFieldi[i][1] == playField[i][1] == whichPlayer){
+                    console.log("orizzontale true");
+                    return true;
+                }
+            }
+            console.log("orizzontale false");
+            return false;
+        }
+        function diagonal(whichPlayer){
+            let tmp = false;
+            if(playField[0][0] == playFieldi[1][1] == playField[2][2] == whichPlayer){
+                tmp = true;
+                }
+            if(playField[2][0] == playFieldi[1][1] == playField[0][2] == whichPlayer){
+                tmp = true;
+            }
+            console.log("diagonale"+ tmp);
+            return tmp;
+        }
     </script>
 
 </body>
