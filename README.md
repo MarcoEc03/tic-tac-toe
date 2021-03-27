@@ -3,7 +3,7 @@ tic tac toe on javascript, but in reality it is a test for git.
 
 
 ## TO-DO:
-- [ ] make a basic look
+- [x] make a basic look
 - [ ] add the ID to the buttons
 - [ ] make it work
 - [ ] set-up viewport for mobile devices
