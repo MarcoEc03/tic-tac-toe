@@ -29,7 +29,7 @@
     </div>
 
     <p id="player"> </p>
-    <script>
+    <script language="javascript">
         let playField = [];
         for(let i = 0; i < 3; i++){
             playField[i] = new Array(3);
@@ -112,21 +112,21 @@
         function vertical(whichPlayer){ //player should be a boolean that indicates the player to check
             for(let i = 0; i < 3; i++){
                 if(playField[0][i] == playField[1][i] && playField[1][i] == playField[2][i] && playField[2][i] == whichPlayer){
-                    console.log("verticale true");
+                    console.log(whichPlayer + "vertical true");
                     return true;
                 }
             }
-            console.log("verticale false");
+            console.log(whichPlayer + "vertical false");
             return false;
         }
         function orizzontal(whichPlayer){
             for(let i = 0; i < 3; i++){
                 if(playField[i][0] == playField[i][1] &&  playField[i][1] == playField[i][2] && playField[i][2] == whichPlayer){
-                    console.log("orizzontale true");
+                    console.log(whichPlayer + "orizzontal true");
                     return true;
                 }
             }
-            console.log("orizzontale false");
+            console.log(whichPlayer + "orizzontal false");
             return false;
         }
         function diagonal(whichPlayer){
@@ -137,7 +137,7 @@
             if(playField[2][0] == playField[1][1] && playField[1][1] == playField[0][2] && playField[0][2] == whichPlayer){
                 tmp = true;
             }
-            console.log("diagonale"+ tmp);
+            console.log(whichPlayer + "diagonal"+ tmp);
             return tmp;
         }
 
