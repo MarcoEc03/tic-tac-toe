@@ -8,7 +8,7 @@ tic tac toe on javascript, but in reality it is a test for git.
 - [x] make it work better
 - [x] make the buttons prettier
 - [ ] add an image in the titlebar
-- [ ] add a button to restart the game
+- [x] add a button to restart the game
 - [ ] add a wins counter
 - [ ] set-up viewport for mobile devices
 - [ ] make a better appearance
@@ -28,5 +28,6 @@ tic tac toe on javascript, but in reality it is a test for git.
 - [x] make the buttons prettier
 - [x] different colors for different players
 - [x] add border to the buttons
+- [x] add a button to restart the game
 
 #### ©MARCO ECCEL 2021
