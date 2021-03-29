@@ -132,16 +132,24 @@
         function cleanButtons(){
             let buttons = document.getElementsByClassName("O");
             
-            for(let i = 0; i <= buttons.length; i++){
+            for(let i = 0; i < buttons.length; i++){
                 buttons[i].classList.remove("O");
-                buttons[i].innerText="";
             }
 
             buttons = document.getElementsByClassName("X");
 
-            for(let i = 0; i <= buttons.length; i++){
+            for(let i = 0; i < buttons.length; i++){
                 buttons[i].classList.remove("X");
+            }
+
+            buttons = document.getElementsByClassName("button");
+
+            for(let i = 0; i < buttons.length; i++){
                 buttons[i].innerText="";
+            }
+
+            if(document.getElementsByClassName("O").length > 0 || document.getElementsByClassName("X").length > 0){ //not the best solution, but it's effective
+                cleanButtons();
             }
         }
 
