@@ -85,32 +85,27 @@
         }
         
         function checkWin(whichPlayer){
-            if(vertical(whichPlayer) || diagonal(whichPlayer) || orizzontal(whichPlayer)){
+            if(diagonal(whichPlayer) || orizzontalOrVertical(whichPlayer)){
                 return true;
             }
             return false;
         }
     
 
-        function vertical(whichPlayer){ //player should be a boolean that indicates the player to check
-            for(let i = 0; i < 3; i++){
-                if(playField[0][i] == playField[1][i] && playField[1][i] == playField[2][i] && playField[2][i] == whichPlayer){
-                    console.log(whichPlayer + "vertical true");
-                    return true;
-                }
-            }
-            console.log(whichPlayer + "vertical false");
-            return false;
-        }
-        function orizzontal(whichPlayer){
+        
+        function orizzontalOrVertical(whichPlayer){
+            let ret = false;
             for(let i = 0; i < 3; i++){
                 if(playField[i][0] == playField[i][1] &&  playField[i][1] == playField[i][2] && playField[i][2] == whichPlayer){
                     console.log(whichPlayer + "orizzontal true");
-                    return true;
+                    ret = true;
+                }
+                if(playField[0][i] == playField[1][i] && playField[1][i] == playField[2][i] && playField[2][i] == whichPlayer){
+                    console.log(whichPlayer + "vertical true");
+                    ret = true;
                 }
             }
-            console.log(whichPlayer + "orizzontal false");
-            return false;
+            return ret;
         }
         function diagonal(whichPlayer){
             let tmp = false;
