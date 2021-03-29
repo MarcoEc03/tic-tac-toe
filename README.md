@@ -1,5 +1,5 @@
-# tic-tac-toe
-tic tac toe on javascript, but in reality it is a test for git. 
+# Tic-Tac-Toe
+Tic tac toe on javascript, but in reality it is my first project using Git. 
 
 
 ## TO-DO:
