@@ -33,3 +33,4 @@ Tic tac toe on javascript, but in reality it is my first project using Git.
 - [x] add a wins counter
 
 #### ©MARCO ECCEL 2021
+##### Do whatever you want with my code but _quote me_ on your project, and maybe make a pull request so i can see your code 😉.
