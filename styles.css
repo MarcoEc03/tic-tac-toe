@@ -39,11 +39,11 @@
     cursor: pointer;
     background-color: white; 
     color: black; 
-    border: 2px solid #4CAF50;
+    border: 2px solid #53b317;
 }
   
   
 .button1:hover {
-    background-color: #4CAF50;
+    background-color: #53b317;
     color: white;
 }  

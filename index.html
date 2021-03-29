@@ -33,13 +33,15 @@
     <p id="player"> </p>
     <br>
     <button id="restartButton" onclick="restart()" class="button1" type="button">restart</button>
+    <span id="pointCounter"> </span>
     <script language="javascript">
         let playField = [];
         for(let i = 0; i < 3; i++){
             playField[i] = new Array(3);
         }
         let currentPlayer = 2; //player X is 1, player O is 2
-
+        let Xpoints = 0;
+        let Opoints = 0;
         cleanField();
 
 
@@ -58,6 +60,7 @@
             if(checkWin(currentPlayer)){
                 disableField(true);
                 document.getElementById("player").innerText = getPlayerName() + " won the game";
+                pointAdd();
             }
         }
 
@@ -160,6 +163,19 @@
             changePlayer();
             changePlayer();
             disableField(false);
+            displayPoints();
+        }
+
+        function pointAdd(){
+            if(currentPlayer == 1){
+                Xpoints++;
+            }else if(currentPlayer ==2){
+                Opoints++;
+            }
+        }
+
+        function displayPoints(){
+            document.getElementById("pointCounter").innerText="X " + Xpoints +"-"+ Opoints +" O";
         }
     </script>
 
