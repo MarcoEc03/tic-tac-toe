@@ -30,6 +30,8 @@
     </div>
 
     <p id="player"> </p>
+    <br>
+    <button id="restartButton" onclick="restart()" class="button1" type="button">restart</button>
     <script language="javascript">
         let playField = [];
         for(let i = 0; i < 3; i++){
@@ -127,7 +129,24 @@
             }
         }
 
+        function cleanButtons(){
+            let buttons = document.getElementsByClassName("O");
+            
+            for(let i = 0; i <= buttons.length; i++){
+                buttons[i].classList.remove("O");
+                buttons[i].innerText="";
+            }
+
+            buttons = document.getElementsByClassName("X");
+
+            for(let i = 0; i <= buttons.length; i++){
+                buttons[i].classList.remove("X");
+                buttons[i].innerText="";
+            }
+        }
+
         function restart(){
+            cleanButtons();
             cleanField();
             changePlayer();
             disableField(false);
