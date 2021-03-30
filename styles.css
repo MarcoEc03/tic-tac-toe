@@ -8,20 +8,19 @@
     font-size: 16px;
     cursor: pointer;
     font-family: 'Brush Script MT', cursive;
+    color: black;
   }
 
 
 .X{
 
-    background-color: white; 
-    color: black; 
+    background-color: rgba(251, 123, 123, 0.144);  
     border: 2px solid red;
     padding: 30px 33px;
 }
 
 .O{
-    background-color: white; 
-    color: black; 
+    background-color: #3c9ab91f; 
     border: 2px solid #008CBA;
     padding: 30px 33px;
 }
@@ -46,4 +45,4 @@
 .button1:hover {
     background-color: #53b317;
     color: white;
-}  
+}
