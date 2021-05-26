@@ -9,7 +9,7 @@ Tic tac toe on javascript, but in reality it is my first project using Git.
 - [x] add a button to restart the game
 - [x] add a wins counter
 - [x] set-up viewport for mobile devices
-- [ ] better structure the code
+- [x] better structure the project
 - [ ] make a better appearance
 - [ ] add the darkmode
 - [ ] make a player versus player mode (online)
@@ -34,6 +34,7 @@ Tic tac toe on javascript, but in reality it is my first project using Git.
 - [x] add a wins counter
 - [x] make file only for JS
 - [x] make html cleaner
+- [x] better structure the project
 
 #### ©MARCO ECCEL 2021
 ##### Do whatever you want with my code but _quote me_ on your project, and maybe make a pull request so i can see your code 😉.
