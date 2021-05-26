@@ -9,6 +9,7 @@ Tic tac toe on javascript, but in reality it is my first project using Git.
 - [x] add a button to restart the game
 - [x] add a wins counter
 - [x] set-up viewport for mobile devices
+- [ ] better structure the code
 - [ ] make a better appearance
 - [ ] add the darkmode
 - [ ] make a player versus player mode (online)
